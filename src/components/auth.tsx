@@ -1,5 +1,5 @@
 "use client";
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import React from "react";
 import { Button } from "./ui/button";
 
@@ -11,6 +11,7 @@ const Auth = () => {
       {session ? (
         <>
           <h1>Welocome Back</h1>
+          <Button onClick={() => signOut()}>Sign out</Button>
         </>
       ) : (
         <>
